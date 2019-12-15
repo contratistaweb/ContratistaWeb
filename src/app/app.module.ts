@@ -1,18 +1,71 @@
+// Funciones
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ToastrModule } from "ngx-toastr";
+
+// Contenido
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ServicesComponent } from './components/dashboard/services/services.component';
+import { UsersComponent } from './components/dashboard/users/users.component';
+import { LoginComponent } from './components/login/login.component';
+import { AboutComponent } from './components/about/about.component';
+import { ServiceComponent } from './components/dashboard/services/service/service.component';
+import { ServicesListComponent } from './components/dashboard/services/services-list/services-list.component';
+import { UserComponent } from './components/dashboard/users/user/user.component';
+import { UsersListComponent } from './components/dashboard/users/users-list/users-list.component';
+
+//Servicios
+import { AuthService } from './services/auth.service';
+import { DataService } from './services/data.service';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent,
+    DashboardComponent,
+    ServicesComponent,
+    UsersComponent,
+    LoginComponent,
+    AboutComponent,
+    ServiceComponent,
+    ServicesListComponent,
+    UserComponent,
+    UsersListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
