@@ -22,10 +22,10 @@ export class ServiceComponent implements OnInit {
   onSubmit(serviceForm: NgForm){
     if(serviceForm.value.$key == null){
       this.dataService.insertService(serviceForm.value);
-      this.toastr.success('operacion Exitosa', 'Servicio Agregado Correctamente');
+      this.toastr.success('Operacion Exitosa', 'Servicio Agregado Correctamente');
     }else{
       this.dataService.updateService(serviceForm.value);
-      this.toastr.success('operacion Exitosa', 'Servicio Actualizado Correctamente');
+      this.toastr.success('Operacion Exitosa', 'Servicio Actualizado Correctamente');
     }
     this.resetForm(serviceForm);
   

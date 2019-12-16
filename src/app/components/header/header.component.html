@@ -10,13 +10,19 @@
                 <a class="nav-link" routerLink="/home" routerLinkActive="active">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/login" routerLinkActive="active">Iniciar Sesion</a>
+                <a class="nav-link" *ngIf="!user" (click)="onLogin()" routerLinkActive="active">Iniciar Sesion</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" *ngIf="user" (click)="onLogout()" routerLinkActive="active">Cerrar Sesion</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" *ngIf="!user" (click)="onRegister()" routerLinkActive="active">Registro</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLink="/about" routerLinkActive="active">Sobre Nosotros</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+                <a class="nav-link" *ngIf="user" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

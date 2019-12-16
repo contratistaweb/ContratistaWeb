@@ -30,6 +30,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { RegisterComponent } from './components/register/register.component';
 
 
 
@@ -48,7 +49,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     ServiceComponent,
     ServicesListComponent,
     UserComponent,
-    UsersListComponent
+    UsersListComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
