@@ -1,10 +1,39 @@
 <div class="card">
     <div class="card-title">
-        <h6>Usuario</h6>
+        <h4>Crear / Editar Usuarios</h4>
     </div>
     <div class="card-body">
-        <div class="alert-dark">
-            <span>Usuario</span>
-        </div>
+        <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+            <input type="hidden" name="$id" #$id="ngModel" [(ngModel)]="dataService.selectedUser.$key">
+            <div class="form-group">
+                <label for="firstName">Nombres</label>
+                <input type="text" class="form-control" name="firstName" #firstName="ngModel" [(ngModel)]="dataService.selectedUser.firstName" aria-describedby="firstNameHelp">
+                <small id="firstNameHelp" class="form-text text-muted">Nombre del usuario.</small>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Apellidos</label>
+                <input type="text" class="form-control" name="lastName" #lastName="ngModel" [(ngModel)]="dataService.selectedUser.lastName" aria-describedby="lastNameHelp">
+                <small id="lastNameHelp" class="form-text text-muted">Apellidos del usuario.</small>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" name="email" #email="ngModel" [(ngModel)]="dataService.selectedUser.email" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">Email del usuario.</small>
+            </div>
+            <div class="form-group">
+                <label for="role">Rol de Usuario</label>
+                <input type="text" class="form-control" name="role" #role="ngModel" [(ngModel)]="dataService.selectedUser.role" aria-describedby="roleHelp" maxlength="50">
+                <small id="roleHelp" class="form-text text-muted">Rol del usuario.</small>
+            </div>
+            <div class="form-group text-center my-2">
+                <button class="btn btn-primary mx-1" type="reset" (click)="resetForm(serviceForm)">Limpiar
+                    <i class="material-icons small">clear_all</i>
+                  </button>
+                <button class="btn btn-success mx-1" type="submit">Enviar
+            <i class="material-icons small">send</i>
+          </button>
+
+            </div>
+        </form>
     </div>
 </div>

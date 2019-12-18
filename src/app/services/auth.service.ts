@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { BehaviorSubject } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -27,14 +27,13 @@ export class AuthService {
     this.auth.auth.createUserWithEmailAndPassword(user.email, user.password)
       .then(userCredential => {
         this.newUser = user;
-        console.log(userCredential);
         userCredential.user.updateProfile({
           displayName: user.firstName + ' ' + user.lastName
         });
         this.insertUserData(userCredential)
           .then(() => {
-            this.router.navigate(['/login'])
-          });
+            this.router.navigate(['/dashboard'])
+          })
       })
       .catch(error => {
         this.eventAuthError.next(error);
@@ -46,8 +45,8 @@ export class AuthService {
       email: this.newUser.email,
       firstName: this.newUser.firstName,
       lastName: this.newUser.lastName,
-      role: 'network user'
-    })
+      role: this.newUser.role
+    });
   }
 
   login(email: string, password: string) {

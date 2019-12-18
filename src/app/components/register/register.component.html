@@ -4,7 +4,7 @@
             {{ authError?.message }}
         </div>
     </div>
-    <form class="bg-dark text-white rounded p-2" #loginForm="ngForm" (ngSubmit)="register(loginForm)">
+    <form class="bg-dark text-white rounded p-2" #registerForm="ngForm" (ngSubmit)="register(registerForm); onSubmit(registerForm)">
 
         <div>
             <h3 class="text-center">Registrar Usuario</h3>
@@ -25,6 +25,7 @@
             <label for="password">contraseña:</label>
             <input type="password" class="form-control" name="password" [(ngModel)]="password">
         </div>
+        <input type="hidden" name="role" [(ngModel)]="role" value="role">
         <div class="text-center">
             <button type="submit" class="btn btn-primary">Registrarme</button>
         </div>

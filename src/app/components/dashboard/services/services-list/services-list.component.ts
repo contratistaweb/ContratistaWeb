@@ -32,7 +32,7 @@ export class ServicesListComponent implements OnInit {
   }
   
   onDelete($key:string){
-    if(confirm('¿Esta seguro de querer eliminarlo?')){
+    if(confirm('¿Esta seguro de querer eliminar este servicio?')){
       this.dataService.deleteService($key);
     this.toastr.success('Operacion Exitosa', 'El servicio se ha liminado correctamente');
     }
