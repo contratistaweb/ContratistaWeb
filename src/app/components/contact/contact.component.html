@@ -1,0 +1,36 @@
+<div class="row justify-content-center align-content-center bloque" id="bloque">
+    <div class="alert alert-danger col-md-12" *ngIf="authError">
+        {{authError?.message}}
+    </div>
+
+    <form class="bg-dark text-white rounded p-2" #contactForm="ngForm" (ngSubmit)="contact(contactForm)">
+
+        <div>
+            <h3 class="text-center">Contacto</h3>
+            <h6 class="text-center">* En construcción *</h6>
+        </div>
+        <div class="form-group">
+            <label for="firstName">Nombres:</label>
+            <input type="text" class="form-control" name="firstName" [(ngModel)]="firstName">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Apellidos:</label>
+            <input type="text" class="form-control" name="lastName" [(ngModel)]="lastName">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" name="email" [(ngModel)]="email">
+        </div>
+        <div class="form-group">
+            <label for="subject">Asunto:</label>
+            <input type="text" class="form-control" name="subject" [(ngModel)]="subject">
+        </div>
+        <div class="form-group">
+            <label for="commit">Comentario:</label>
+            <textarea type="text" rows="5" class="form-control" name="commit" [(ngModel)]="commit" maxlength="500"></textarea>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Enviar <i class="material-icons small">send</i></button>
+        </div>
+    </form>
+</div>

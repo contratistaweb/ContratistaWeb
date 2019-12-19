@@ -1,9 +1,8 @@
-<div class="row m-3 justify-content-center align-middle">
-    <div class="col-md-12" *ngIf="authError">
-        <div class="alert alert-danger">
-            {{authError?.message}}
-        </div>
+<div class="row justify-content-center align-content-center bloque" id="bloque">
+    <div class="alert alert-danger col-md-12" *ngIf="authError">
+        {{authError?.message}}
     </div>
+
     <form class="bg-dark text-white rounded p-2" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
         <div>
             <h3 class="text-center">Iniciar Sesion</h3>
