@@ -1,1 +1,58 @@
-<p>home works!</p>
+<section>
+
+    <!--  **  Bloque Front End  **  -->
+    <article class="bloque row col-md-12 justify-content-center" id="bloque">
+
+        <h3 class="text-center col-md-12">Servicios Front End</h3>
+
+        <div *ngFor="let service of servicesList">
+            <div class="card m-2" style="width: 18rem;" *ngIf="service.category == 'Front End'">
+                <img src="{{service.img}}" class="card-img-top" alt="{{ service.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ service.title }}</h5>
+                    <p class="card-text">{{ service.small_desc }}</p>
+                    <a class="btn btn-primary">Ver +</a>
+                </div>
+            </div>
+        </div>
+
+    </article>
+
+    <!--  **  Bloque Frameworks  **  -->
+    <article class="bloque-1 row col-md-12 justify-content-center" id="">
+
+        <h3 class="text-center col-md-12">Servicios Frameworks</h3>
+
+        <div *ngFor="let service of servicesList">
+            <div class="card m-2" style="width: 18rem;" *ngIf="service.category == 'Frameworks'">
+                <img src="{{service.img}}" class="card-img-top" alt="{{ service.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ service.title }}</h5>
+                    <p class="card-text">{{ service.small_desc }}</p>
+                    <a class="btn btn-primary">Ver +</a>
+                </div>
+            </div>
+        </div>
+
+    </article>
+
+    <!--  **  Bloque Back End **  -->
+    <article class="bloque row col-md-12 justify-content-center" id="bloque">
+
+        <h3 class="text-center col-md-12">Servicios Back End</h3>
+
+        <div *ngFor="let service of servicesList">
+            <div class="card m-2" style="width: 18rem;" *ngIf="service.category == 'Back End'">
+                <img src="{{service.img}}" class="card-img-top" alt="{{ service.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ service.title }}</h5>
+                    <p class="card-text">{{ service.small_desc }}</p>
+                    <a class="btn btn-primary">Ver +</a>
+                </div>
+            </div>
+        </div>
+
+    </article>
+
+
+</section>
