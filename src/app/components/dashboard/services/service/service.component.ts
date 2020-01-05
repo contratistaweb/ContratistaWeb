@@ -12,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ServiceComponent implements OnInit {
 
-  constructor(private dataService:DataService, private toastr:ToastrService) { }
+  constructor(public dataService:DataService, private toastr:ToastrService) { }
 
   ngOnInit() {
     this.dataService.getServices();

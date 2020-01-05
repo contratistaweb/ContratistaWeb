@@ -11,7 +11,7 @@ import { Users } from 'src/app/models/users';
 })
 export class UserComponent implements OnInit {
   
-  constructor(private dataService:DataService, private toastr:ToastrService) { }
+  constructor(public dataService:DataService, private toastr:ToastrService) { }
 
   ngOnInit() {
     this.dataService.getUsers();
@@ -19,7 +19,7 @@ export class UserComponent implements OnInit {
   }
 
   onSubmit(userForm: NgForm){
-    if(userForm.value.$id == null){
+    if(userForm.value.$key == null){
       this.dataService.insertUser(userForm.value);
       this.toastr.success('Operacion Exitosa', 'Usuario Agregado Correctamente');
     }else{

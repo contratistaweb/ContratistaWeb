@@ -9,11 +9,11 @@
         </div>
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" class="form-control" name="email" [(ngModel)]="email">
+            <input type="email" class="form-control" name="email" ngModel #email="ngModel" required>
         </div>
         <div class="form-group">
             <label for="password">contraseña:</label>
-            <input type="password" class="form-control" name="password" [(ngModel)]="password">
+            <input type="password" class="form-control" name="password" ngModel #password="ngModel" required>
         </div>
         <div class="text-center">
             <button type="submit" class="btn btn-primary">Iniciar Sesion</button>

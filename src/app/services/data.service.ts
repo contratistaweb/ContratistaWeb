@@ -69,7 +69,7 @@ export class DataService {
   }
 
   updateUser(user:Users){
-    this.usersList.update(user.$id, {
+    this.usersList.update(user.$key, {
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,
@@ -77,7 +77,7 @@ export class DataService {
     });
   }
   
-  deleteUser($id:string){
-    this.usersList.remove($id);
+  deleteUser($key:string){
+    this.usersList.remove($key);
   }
 }

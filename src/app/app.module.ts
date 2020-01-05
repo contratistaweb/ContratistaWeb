@@ -20,6 +20,8 @@ import { ServiceComponent } from './components/dashboard/services/service/servic
 import { ServicesListComponent } from './components/dashboard/services/services-list/services-list.component';
 import { UserComponent } from './components/dashboard/users/user/user.component';
 import { UsersListComponent } from './components/dashboard/users/users-list/users-list.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 //Servicios
 import { AuthService } from './services/auth.service';
@@ -28,10 +30,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { environment } from 'src/environments/environment';
+import { environment } from './../environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { RegisterComponent } from './components/register/register.component';
-import { ContactComponent } from './components/contact/contact.component';
+import { SeoService } from './services/seo.service';
 
 
 
@@ -57,7 +58,7 @@ import { ContactComponent } from './components/contact/contact.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase, 'contratistaweb'),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
@@ -68,7 +69,8 @@ import { ContactComponent } from './components/contact/contact.component';
   ],
   providers: [
     AuthService,
-    DataService
+    DataService,
+    SeoService
   ],
   bootstrap: [AppComponent]
 })

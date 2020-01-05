@@ -12,12 +12,12 @@ import { ContactComponent } from './components/contact/contact.component';
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
-  //{path: 'register', component: RegisterComponent},
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate: [GuardGuard] },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home', pathMatch: 'full'}
+  //{path: 'register', component: RegisterComponent},
 ];
 
 @NgModule({
